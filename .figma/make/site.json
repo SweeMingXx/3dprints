@@ -1,0 +1,11 @@
+{
+  "title": "Swee Ming dabbles in 3D prints",
+  "description": "A running collection of AI-assisted 3D-print experiments by Swee Ming, from prompt to finished print.",
+  "robots": {
+    "index": true
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
