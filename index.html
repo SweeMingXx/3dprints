@@ -5,61 +5,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><!-- figma:title --></title>
-    <style>
-      /* Show both complete landscape images at full card width without cropping. */
-      .work-section .project-card:nth-last-child(-n + 2) .project-image {
-        height: auto;
-        aspect-ratio: 1000 / 670;
-      }
-      .work-section .project-card:nth-last-child(-n + 2) .project-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-    </style>
     <!-- figma:head-end -->
   </head>
   <body>
     <!-- figma:body-start -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script>
-      // Prefer the owner's unmodified, full-resolution PNGs as soon as they are
-      // present in public/. Keep the existing images as a safe fallback meanwhile.
-      (() => {
-        const files = new Map([
-          ["Dragon Bookmark", "/3dprints/Dragon_Bookmark-506f863f.png"],
-          ["Lotus Bookmark", "/3dprints/Lotus_Bookmark-b61ee6c0.png"],
-        ]);
-        const ready = new Map();
-        const root = document.getElementById("root");
-        const update = () => {
-          for (const card of root.querySelectorAll(".project-card")) {
-            const url = ready.get(card.querySelector("h3")?.textContent?.trim());
-            const image = card.querySelector(".project-image img");
-            if (url && image && image.getAttribute("src") !== url) image.src = url;
-          }
-          const url = ready.get(root.querySelector("#modal-title")?.textContent?.trim());
-          if (url) {
-            for (const image of root.querySelectorAll(".modal-image img")) {
-              if (image.getAttribute("src") !== url) image.src = url;
-            }
-          }
-        };
-        new MutationObserver(update).observe(root, {
-          childList: true,
-          subtree: true,
-          characterData: true,
-          attributes: true,
-          attributeFilter: ["src"],
-        });
-        for (const [title, url] of files) {
-          const image = new Image();
-          image.onload = () => { ready.set(title, url); update(); };
-          image.src = url;
-        }
-      })();
-    </script>
     <!-- figma:body-end -->
   </body>
 </html>
