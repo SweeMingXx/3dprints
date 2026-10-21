@@ -5,6 +5,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><!-- figma:title --></title>
+    <style>
+      /* The two bookmark photos are landscape compositions; preserve the full prints. */
+      .work-section .project-card:nth-last-child(-n + 2) .project-image {
+        height: auto;
+        aspect-ratio: 1000 / 670;
+      }
+      .work-section .project-card:nth-last-child(-n + 2) .project-image img {
+        object-fit: contain;
+      }
+    </style>
     <!-- figma:head-end -->
   </head>
   <body>
