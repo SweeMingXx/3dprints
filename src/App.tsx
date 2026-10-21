@@ -10,6 +10,8 @@ import lionCrestPhoto from "./assets/lion-crest.png";
 import ironTuskPhoto from "./assets/iron-tusk.jpg";
 import amethystClusterPhoto from "./assets/amethyst-cluster.png";
 import silverFoxPhoto from "./assets/silver-fox.jpg";
+import dragonBookmarkPhoto from "./assets/dragon-bookmark";
+import lotusBookmarkPhoto from "./assets/lotus-bookmark";
 
 type Project = {
   title: string;
@@ -123,6 +125,26 @@ const projects: Project[] = [
     description:
       "A bright silver woodland companion with oversized ears and faceted details.",
     index: "010",
+  },
+  {
+    title: "Dragon Bookmark",
+    category: "Bookmarks",
+    material: "3D printed",
+    image: dragonBookmarkPhoto,
+    modalImageFit: "contain",
+    description:
+      "A teal dragon curling down the page, keeping your place in style.",
+    index: "011",
+  },
+  {
+    title: "Lotus Bookmark",
+    category: "Bookmarks",
+    material: "3D printed",
+    image: lotusBookmarkPhoto,
+    modalImageFit: "contain",
+    description:
+      "A teal lotus bloom with an elongated stem that slips between the pages.",
+    index: "012",
   },
 ];
 
